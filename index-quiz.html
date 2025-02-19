@@ -1,0 +1,219 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+                <audio src="https://f.top4top.io/m_3199cw4am1.mp3" autoplay controls> </audio> 
+		<title>𝙄𝙏'𝙕 𝙈𝙀...𝙎𝙃𝘼𝘿𝙊𝙒 𝘽𝙍𝙊𝙆𝙀𝙍..!</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper">
+			<div id="bg"></div>
+			<div id="overlay"></div>
+			<div id="main">
+
+				<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f4f4f4;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .quiz-container {
+            background: rgb(17, 0, 0);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .question {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .option {
+            background: #3498db;
+            color: rgb(236, 236, 236);
+            border: none;
+            padding: 10px;
+            margin: 5px 0;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .option:hover {
+            background: #2980b9;
+        }
+
+        .result {
+            margin-top: 10px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        #restart-btn {
+            display: none;
+            margin-top: 15px;
+            padding: 10px 15px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #restart-btn:hover {
+            background-color: #219150;
+        }
+
+        .home-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #e74c3c;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .home-btn:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Interactive Quiz</h2>
+
+    <div class="quiz-container">
+        <div id="question" class="question">Loading question...</div>
+        <div class="options">
+            <button class="option" onclick="checkAnswer(this)">Option 1</button>
+            <button class="option" onclick="checkAnswer(this)">Option 2</button>
+            <button class="option" onclick="checkAnswer(this)">Option 3</button>
+            <button class="option" onclick="checkAnswer(this)">Option 4</button>
+        </div>
+        <div id="result" class="result"></div>
+        <button id="restart-btn" onclick="restartQuiz()">Play Again</button>
+    </div>
+
+    <a href="index.html" class="home-btn">HOME</a>
+
+    <script>
+        const quizData = [
+            { question: "WHICH PLANET IS KNOWN AS THE RED PLANET?", options: ["MARS", "EARTH", "JUPITER", "PLUTO"], correct: "MARS" },
+            { question: "WHAT IS 7 × 8?", options: ["42", "48", "56", "64"], correct: "56" },
+            { question: "WHO PAINTED THE MONA LISA?", options: ["VINCENT VAN GOGH", "PABLO PICASSO", "LEONARDO DA VINCI", "CLAUDE MONET"], correct: "LEONARDO DA VINCI" },
+            { question: "WHAT IS THE CHEMICAL SYMBOL FOR WATER?", options: ["H₂O", "CO₂", "O₂", "NaCl"], correct: "H₂O" },
+            { question: "WHAT IS THE CAPITAL OF INDIA?", options: ["KERALA", "TAMIL NADU", "DELHI", "KOLLAM"], correct: "DELHI" },
+            { question: "WHICH CITY IS KNOWN AS THE PINK CITY OF INDIA?", options: ["JAIPUR", "DELHI", "MUMBAI", "KOLKATA"], correct: "JAIPUR" },
+            { question: "WGO WAS THE FIRST PRIME MINISTER OF INDIA?", options: ["MOTILAL NEHRU", "JAWAHARLAL NEHRU", "INDIRA GANDHI", "MAHATMA GANDHI"], correct: "JAWAHARLAL NEHRU" },
+            { question: "WHICH IS THE NATIONAL ANIMAL OF INDIA?", options: ["LION", "ELEPHANT", "TIGER", "LEOPARD"], correct: "TIGER" },
+            { question: "WHAT IS NATIONAL CURRENCY OF INDIA?", options: ["RUPEE", "DOLLAR", "EURO", "YEN"], correct: "RUPEE" },
+            { question: "WHICH IS THE LONGEST RIVER IN INDIA?", options: ["YAMUNA", "GANGA", "GODAVARI", "Narmada"], correct: "GANGA" },
+            { question: "WHO WROTE THE INDIAN NATIONAL ANTHEM?", options: ["SAROJINI NAIDU", "RABINDRANATH TAGORE", "BANKIM CHANDRA CHATHROPATHY", "MAHATMA GANDHI"], correct: "RABINDRANATH TAGORE" },
+            { question: "WHICH STATE IS FAMOUS FOR THE FESTIVAL OF PONGAL?", options: ["KERALA", "KARNATAKA", "TAMIL NADU", "ANDHRA PRADESH"], correct: "TAMIL NADU" },
+            { question: "WHICH MONUMENT IS KNOWN AS THE SYMBOL OF LOVE IN INDIA?", options: ["QUTUB MINAR", "TAJ MAHAL", "INDIA GATE", "GATEWAY OF INDIA"], correct: "TAJ MAHAL" }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        function loadQuestion() {
+            let questionData = quizData[currentQuestionIndex];
+            document.getElementById("question").innerText = questionData.question;
+
+            let options = document.querySelectorAll(".option");
+            options.forEach((button, index) => {
+                button.innerText = questionData.options[index];
+                button.style.backgroundColor = "#3498db";
+                button.disabled = false;
+            });
+
+            document.getElementById("result").innerText = "";
+        }
+
+        function checkAnswer(selectedOption) {
+            let correctAnswer = quizData[currentQuestionIndex].correct;
+
+            if (selectedOption.innerText === correctAnswer) {
+                selectedOption.style.backgroundColor = "#2ecc71";
+                document.getElementById("result").innerText = "✅ Correct!";
+                score++;
+            } else {
+                selectedOption.style.backgroundColor = "#e74c3c";
+                document.getElementById("result").innerText = "❌ Wrong! The correct answer is " + correctAnswer;
+            }
+
+            document.querySelectorAll(".option").forEach(button => button.disabled = true);
+
+            setTimeout(() => {
+                currentQuestionIndex++;
+                if (currentQuestionIndex < quizData.length) {
+                    loadQuestion();
+                } else {
+                    document.getElementById("question").innerText = `🎉 Quiz Completed! Your Score: ${score} / ${quizData.length}`;
+                    document.querySelector(".options").style.display = "none";
+                    document.getElementById("restart-btn").style.display = "block";
+                }
+            }, 2000);
+        }
+
+        function restartQuiz() {
+            currentQuestionIndex = 0;
+            score = 0;
+            document.querySelector(".options").style.display = "flex";
+            document.getElementById("restart-btn").style.display = "none";
+            loadQuestion();
+        }
+
+        loadQuestion();
+    </script>
+
+<br>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; Copyright  2025:  <a href="https://sh4dowbroker.github.io">Developed By TEAM BJI </a></p>
+						
+					</footer>
+
+			</div>
+		</div>
+		<script>
+			window.onload = function() { document.body.classList.remove('is-preload'); }
+			window.ontouchmove = function() { return false; }
+			window.onorientationchange = function() { document.body.scrollTop = 0; }
+		</script>
+	</body>
+</html>
