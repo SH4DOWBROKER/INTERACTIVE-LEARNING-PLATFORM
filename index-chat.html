@@ -21,100 +21,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lungs Test - Breath Holding Time</title>
+    
+     <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Chatbot</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background-color: #f4f4f4;
-            height: 100vh;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .container {
-            background: rgb(0, 0, 0);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            max-width: 400px;
-            width: 100%;
             text-align: center;
+            background-color: #0a0f1a;
+            color: #ffffff;
         }
-
-        h2 {
-            margin-bottom: 10px;
-        }
-
-        button {
-            background: #000000;
-            color: rgb(0, 0, 0);
-            border: none;
+        #chatbox {
+            width: 300px;
+            height: 400px;
+            border: 1px solid #1a237e;
+            overflow-y: auto;
+            margin: 20px auto;
             padding: 10px;
-            margin-top: 15px;
-            cursor: pointer;
+            background-color: #1c2541;
+            color: #ffffff;
             border-radius: 5px;
-            width: 100%;
         }
-
+        #userInput {
+            width: 250px;
+            padding: 5px;
+            background-color: #283593;
+            color: white;
+            border: 1px solid #1a237e;
+        }
+        button {
+            padding: 5px;
+            background-color: #3949ab;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
         button:hover {
-            background: #2980b9;
-        }
-
-        .result {
-            margin-top: 15px;
-            font-size: 18px;
-            font-weight: bold;
+            background-color: #5c6bc0;
         }
     </style>
 </head>
 <body>
-
-    <div class="container">
-        <h2>Lungs Test - Breath Holding Time</h2>
-        <p>Click "Start Timer", hold your breath, and click "Stop Timer" when you exhale.</p>
-        
-        <button onclick="startTimer()">Start Timer</button>
-        <button onclick="stopTimer()">Stop Timer</button>
-
-        <div id="timer" class="result">Time: 0 seconds</div>
-        <div id="lung-result" class="result"></div>
-    </div>
-
+    <h1>Advanced Chatbot</h1>
+    <div id="chatbox"></div>
+    <input type="text" id="userInput" placeholder="Type a message...">
+    <button onclick="sendMessage()">Send</button>
+    
     <script>
-        let startTime, endTime;
+        const responses = {
+            "hello": "Hi there!",
+            "how are you": "I'm just a bot, but I'm doing great!",
+            "bye": "Goodbye! Have a nice day!",
+            "what is your name": "I am Chatbot, your virtual assistant!",
+            "what can you do": "I can chat with you and answer simple questions!",
+            "tell me a joke": "Why don't scientists trust atoms? Because they make up everything!",
+            "who created you": "I was created by a programmer!",
+            "what is AI": "Artificial Intelligence is the simulation of human intelligence in machines.",
+            "what is the weather like": "I can't check the weather, but you can try an online weather service!",
+            "how old are you": "I exist beyond time, but I was created recently!",
+            "what is your favorite color": "I like all colors equally!",
+            "tell me a fun fact": "Did you know that honey never spoils? Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3000 years old and still edible!",
+            "where are you from": "I live in the digital world!",
+            "can you sing": "I wish I could! But I can tell you a joke instead.",
+            "what is the meaning of life": "That's a deep question! Some say it's 42, others say it's love and happiness.",
+            "can you help me": "Of course! Ask me anything.",
+            "do you like humans": "I think humans are fascinating! You created me, after all.",
+            "what do you eat": "I run on electricity and data!"
+        };
 
-        function startTimer() {
-            startTime = new Date().getTime();
-            document.getElementById("timer").innerText = "Timing...";
-            document.getElementById("lung-result").innerText = "";
-        }
-
-        function stopTimer() {
-            if (!startTime) {
-                document.getElementById("lung-result").innerText = "⚠ Please click 'Start Timer' first.";
-                return;
-            }
-
-            endTime = new Date().getTime();
-            let duration = (endTime - startTime) / 1000; // Convert ms to seconds
-            document.getElementById("timer").innerText = `Time: ${duration.toFixed(1)} seconds`;
-
-            let resultText = "";
-            if (duration < 10) {
-                resultText = "❌ Poor lung capacity! Consider consulting a doctor.";
-            } else if (duration >= 10 && duration <= 20) {
-                resultText = "⚠ Average lung capacity. Try breathing exercises.";
-            } else {
-                resultText = "✅ Excellent lung health! Keep it up!";
-            }
-
-            document.getElementById("lung-result").innerText = resultText;
+        function sendMessage() {
+            var userInput = document.getElementById("userInput").value;
+            if (userInput.trim() === "") return;
+            
+            var chatbox = document.getElementById("chatbox");
+            var userMessage = "<div><strong>You:</strong> " + userInput + "</div>";
+            chatbox.innerHTML += userMessage;
+            
+            var botResponse = responses[userInput.toLowerCase()] || "I'm not sure how to respond to that. Try asking something else!";
+            var botMessage = "<div><strong>Bot:</strong> " + botResponse + "</div>";
+            chatbox.innerHTML += botMessage;
+            chatbox.scrollTop = chatbox.scrollHeight;
+            
+            document.getElementById("userInput").value = "";
         }
     </script>
-    <br>
+</body>
+</html>
 
  
 </body>
