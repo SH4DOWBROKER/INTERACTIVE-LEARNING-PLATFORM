@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+                <audio src="https://f.top4top.io/m_3199cw4am1.mp3" autoplay controls> </audio> 
+		<title>BJIHEALTH</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper">
+			<div id="bg"></div>
+			<div id="overlay"></div>
+			<div id="main">
+
+				<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lungs Test - Breath Holding Time</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f4f4f4;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgb(0, 0, 0);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        button {
+            background: #000000;
+            color: rgb(0, 0, 0);
+            border: none;
+            padding: 10px;
+            margin-top: 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        button:hover {
+            background: #2980b9;
+        }
+
+        .result {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Lungs Test - Breath Holding Time</h2>
+        <p>Click "Start Timer", hold your breath, and click "Stop Timer" when you exhale.</p>
+        
+        <button onclick="startTimer()">Start Timer</button>
+        <button onclick="stopTimer()">Stop Timer</button>
+
+        <div id="timer" class="result">Time: 0 seconds</div>
+        <div id="lung-result" class="result"></div>
+    </div>
+
+    <script>
+        let startTime, endTime;
+
+        function startTimer() {
+            startTime = new Date().getTime();
+            document.getElementById("timer").innerText = "Timing...";
+            document.getElementById("lung-result").innerText = "";
+        }
+
+        function stopTimer() {
+            if (!startTime) {
+                document.getElementById("lung-result").innerText = "⚠ Please click 'Start Timer' first.";
+                return;
+            }
+
+            endTime = new Date().getTime();
+            let duration = (endTime - startTime) / 1000; // Convert ms to seconds
+            document.getElementById("timer").innerText = `Time: ${duration.toFixed(1)} seconds`;
+
+            let resultText = "";
+            if (duration < 10) {
+                resultText = "❌ Poor lung capacity! Consider consulting a doctor.";
+            } else if (duration >= 10 && duration <= 20) {
+                resultText = "⚠ Average lung capacity. Try breathing exercises.";
+            } else {
+                resultText = "✅ Excellent lung health! Keep it up!";
+            }
+
+            document.getElementById("lung-result").innerText = resultText;
+        }
+    </script>
+    <br>
+
+ 
+</body>
+<nav>
+ <button><a href="index-sub.html" class="label" >HOME</a> </button>
+    
+</nav>
+
+</html>
+
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; Copyright  2025:  <a href="https://sh4dowbroker.github.io">Developed By TEAM BJI </a></p>
+						
+					</footer>
+
+			</div>
+		</div>
+		<script>
+			window.onload = function() { document.body.classList.remove('is-preload'); }
+			window.ontouchmove = function() { return false; }
+			window.onorientationchange = function() { document.body.scrollTop = 0; }
+		</script>
+	</body>
+</html>
